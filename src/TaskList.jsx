@@ -1,7 +1,4 @@
-import useGetTasks from "./hooks/useGetTasks";
-
-const TaskList = () => {
-  const { tasks } = useGetTasks();
+const TaskList = ({tasks}) => {
 
   return (
     <div>
