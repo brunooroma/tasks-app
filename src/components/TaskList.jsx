@@ -1,7 +1,10 @@
 import TaskCard from "./TaskCard";
+import {TaskContext} from '../context/TaskContext'
+import {useContext} from 'react'
 
-const TaskList = ({tasks, deleteTask}) => {
+const TaskList = () => {
 
+  const {tasks} = useContext(TaskContext)
   return (
     <div>
       {tasks.length === 0 ? (
@@ -9,7 +12,7 @@ const TaskList = ({tasks, deleteTask}) => {
       ) : (
         <div>
           {tasks.map((task) => (
-            <TaskCard key={task.id} task={task} deleteTask={deleteTask}/>
+            <TaskCard key={task.id} task={task} />
           ))}
         </div>
       )}
